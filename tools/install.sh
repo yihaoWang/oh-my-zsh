@@ -15,6 +15,10 @@ hash git >/dev/null 2>&1 && env git clone --depth=1 https://github.com/yihaoWang
   exit
 }
 
+#FIXME do it better
+echo "\033[0;34mInstall Submodule...\033[0m"
+cd $ZSH && git submodule init && git submodule update
+
 echo "\033[0;34mLooking for an existing zsh config...\033[0m"
 if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
   echo "\033[0;33mFound ~/.zshrc.\033[0m \033[0;32mBacking up to ~/.zshrc.pre-oh-my-zsh\033[0m";
